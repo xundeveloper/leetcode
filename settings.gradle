@@ -1,0 +1,5 @@
+rootProject.name = "leetcode"
+include ':core'
+include ':core'
+include ':core'
+include ':problems'
