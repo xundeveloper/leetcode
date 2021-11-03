@@ -38,9 +38,10 @@ internal class ArrayInterviewQuestionsTest {
         val testData = listOf(
             Pair("abc", "cba"),
             Pair("aa", "an"),
-            Pair("aaa", "aa")
+            Pair("aaa", "aa"),
+            Pair("res tful", "flu ster")
         )
-        val expectedData = listOf(true, false, false)
+        val expectedData = listOf(true, false, false, true)
         for ((i, input) in testData.withIndex()) {
             // when
             val actual = arrayInterviewQuestions.isAnagrams(input.first, input.second)

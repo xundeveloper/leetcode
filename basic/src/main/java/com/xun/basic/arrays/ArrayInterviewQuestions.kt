@@ -1,5 +1,7 @@
 package com.xun.basic.arrays
 
+import com.xun.core.nodes.Constant
+
 class ArrayInterviewQuestions {
     /**
      * The problem is that we want to reverse a T[] array in O(N) linear time complexity and we
@@ -29,13 +31,13 @@ class ArrayInterviewQuestions {
 
         if (str1.isEmpty() && str2.isEmpty()) return true
 
-        val letters = IntArray(26)
+        val letters = IntArray(Constant.NUM_OF_ASCII)
         for (char in str1) {
-            val index = char.code - 97
+            val index = Constant.NUM_OF_ASCII - 1 - char.code
             letters[index] = 1
         }
         for (char in str2) {
-            val index = char.code - 97
+            val index = Constant.NUM_OF_ASCII - 1 - char.code
             if (letters[index] == 0) return false
         }
 
