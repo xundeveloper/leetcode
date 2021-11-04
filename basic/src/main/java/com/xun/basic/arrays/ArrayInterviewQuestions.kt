@@ -1,6 +1,7 @@
 package com.xun.basic.arrays
 
 import com.xun.core.nodes.Constant
+import kotlin.math.abs
 
 class ArrayInterviewQuestions {
     /**
@@ -42,5 +43,20 @@ class ArrayInterviewQuestions {
         }
 
         return true
+    }
+
+    /**
+     * The problem is that we want to find duplicates in a T[] one-dimensional array of integers in
+     * O(N) running time
+     *
+     * integer values are smaller than the length of the array - and we can not use negative values!
+     */
+    fun findDuplicates(nums: Array<Int>): ArrayList<Int> {
+        val res = arrayListOf<Int>()
+        for (num in nums) {
+            if (nums[abs(num)] > 0) nums[abs(num)] = -nums[abs(num)]
+            else res.add(nums[abs(num)])
+        }
+        return res
     }
 }
